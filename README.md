@@ -140,8 +140,7 @@ Tasks are automatically saved for the current website.
 
 ### Home
 
-![Home Screenshot](<img width="1200" height="800" alt="ss2" src="https://github.com/user-attachments/assets/b9e19968-2e65-4332-8886-1c674e1bdfc3" />
-)
+<img width="1200" height="800" alt="ss2" src="https://github.com/user-attachments/assets/272aa42e-31c9-4fcb-aeea-ae4ce1646acb" />
 
 
 ---
