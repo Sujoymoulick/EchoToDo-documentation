@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EchoToDo — Privacy Policy</title>
+    <meta name="description" content="EchoToDo Privacy Policy. 100% local processing — no data ever leaves your device.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Premium Light Mode Colors */
             --primary: #5e6ad2;
             --primary-hover: #4753c4;
             --primary-focus: rgba(94, 105, 209, 0.2);
@@ -21,18 +21,12 @@
             --surface-2: #f1f3f5;
             --hairline: rgba(0, 0, 0, 0.08);
             --hairline-strong: rgba(0, 0, 0, 0.16);
-            
-            /* Spacing */
-            --spacing-section: 96px;
-            --spacing-xl: 32px;
-            --spacing-lg: 24px;
+            --success: #16a34a;
+            --success-bg: #f0fdf4;
+            --success-border: #bbf7d0;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--canvas);
@@ -46,13 +40,13 @@
             flex-direction: column;
         }
 
-        /* Typography */
+        /* ── Typography ── */
         h1 {
-            font-size: clamp(32px, 6vw, 48px);
+            font-size: clamp(36px, 6vw, 52px);
             font-weight: 600;
             line-height: 1.1;
             letter-spacing: -0.03em;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             background: linear-gradient(135deg, #0f1017 0%, #343a40 100%);
             -webkit-background-clip: text;
             background-clip: text;
@@ -60,70 +54,120 @@
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             line-height: 1.3;
             letter-spacing: -0.02em;
-            margin: 32px 0 12px;
+            margin: 40px 0 10px;
             color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .section-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--primary-focus);
+            color: var(--primary);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
         }
 
         p {
             color: var(--ink-muted);
             font-size: 15px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
+            line-height: 1.7;
         }
 
         ul {
             margin-bottom: 20px;
-            padding-left: 20px;
+            padding-left: 0;
             color: var(--ink-muted);
             font-size: 15px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        li {
-            margin-bottom: 8px;
+        ul li {
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.6;
         }
 
-        /* Layout */
+        ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        strong { color: var(--ink); font-weight: 600; }
+
+        .eyebrow {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* ── Layout ── */
         .container {
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
             padding: 0 24px;
             width: 100%;
         }
 
-        /* Header */
+        /* ── Nav ── */
         nav {
             height: 64px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
             border-bottom: 1px solid var(--hairline);
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             z-index: 100;
             width: 100%;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 17px;
             letter-spacing: -0.02em;
             text-decoration: none;
             color: var(--ink);
         }
 
-        /* Buttons */
+        /* ── Buttons ── */
         .btn {
             display: inline-flex;
             align-items: center;
+            gap: 6px;
             padding: 8px 16px;
             border-radius: 8px;
             font-size: 14px;
@@ -137,29 +181,180 @@
             background: var(--primary);
             color: white;
             border: none;
-            box-shadow: 0 4px 12px rgba(94, 106, 210, 0.3);
+            box-shadow: 0 4px 12px rgba(94, 106, 210, 0.28);
         }
 
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-1px);
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--ink-muted);
+            border: 1px solid var(--hairline);
         }
 
-        /* Content Card */
+        .btn-ghost:hover { background: var(--surface-2); color: var(--ink); }
+
+        /* ── Hero Badge ── */
+        .hero-section {
+            padding: 64px 0 0;
+            text-align: center;
+        }
+
+        .zero-data-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--success-bg);
+            border: 1px solid var(--success-border);
+            color: var(--success);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 24px;
+        }
+
+        .zero-data-badge .dot {
+            width: 7px;
+            height: 7px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.85); }
+        }
+
+        .hero-subtitle {
+            color: var(--ink-subtle);
+            font-size: 17px;
+            max-width: 560px;
+            margin: 0 auto 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .last-updated {
+            font-size: 13px;
+            color: var(--ink-subtle);
+            margin-bottom: 48px;
+        }
+
+        /* ── Guarantee Cards ── */
+        .guarantee-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 0 0 48px;
+        }
+
+        .guarantee-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .guarantee-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+        }
+
+        .guarantee-card .g-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-card strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--ink);
+        }
+
+        .guarantee-card span {
+            font-size: 13px;
+            color: var(--ink-subtle);
+            line-height: 1.5;
+        }
+
+        /* ── Content Card ── */
         .content-card {
-            margin-top: 48px;
-            margin-bottom: 64px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 24px;
-            padding: 48px;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.03);
-            flex: 1;
+            padding: 52px 56px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.04);
+            margin-bottom: 48px;
         }
 
-        /* Footer */
+        /* ── Permission Table ── */
+        .permission-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 14px;
+        }
+
+        .permission-table thead tr {
+            border-bottom: 2px solid var(--hairline-strong);
+        }
+
+        .permission-table th {
+            text-align: left;
+            padding: 10px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ink-subtle);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+
+        .permission-table td {
+            padding: 14px 12px;
+            vertical-align: top;
+            border-bottom: 1px solid var(--hairline);
+            color: var(--ink-muted);
+            line-height: 1.6;
+        }
+
+        .permission-table tr:last-child td { border-bottom: none; }
+
+        .permission-table td:first-child {
+            white-space: nowrap;
+        }
+
+        .perm-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(94, 106, 210, 0.08);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ── Divider ── */
+        hr {
+            border: none;
+            border-top: 1px solid var(--hairline);
+            margin: 8px 0;
+        }
+
+        /* ── Footer ── */
         footer {
             padding: 48px 0;
             border-top: 1px solid var(--hairline);
@@ -168,14 +363,13 @@
             font-size: 14px;
             margin-top: auto;
             width: 100%;
-            z-index: 10;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 24px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .social-links a {
@@ -184,48 +378,40 @@
             transition: color 0.2s;
         }
 
-        .social-links a:hover {
-            color: var(--ink);
-        }
+        .social-links a:hover { color: var(--ink); }
 
-        /* Backgrounds */
+        /* ── Backgrounds ── */
         #iridescence-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
             z-index: -2;
             pointer-events: none;
             overflow: hidden;
         }
 
-        #iridescence-bg canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
+        #iridescence-bg canvas { width: 100%; height: 100%; display: block; }
 
         .bg-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
             z-index: -1;
             pointer-events: none;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(248, 249, 250, 0.75) 100%);
+            background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.1) 0%, rgba(248,249,250,0.82) 100%);
         }
 
+        /* ── Responsive ── */
         @media (max-width: 768px) {
-            .content-card {
-                padding: 32px 20px;
-                margin-top: 32px;
-                border-radius: 16px;
-            }
-            nav {
-                padding: 0 16px;
-            }
+            .content-card { padding: 32px 24px; border-radius: 16px; }
+            .guarantee-row { grid-template-columns: 1fr; gap: 12px; }
+            .permission-table { font-size: 13px; }
+            .permission-table th, .permission-table td { padding: 10px 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section { padding-top: 48px; }
+            h1 { font-size: 32px; }
         }
     </style>
 </head>
@@ -236,79 +422,165 @@
     <div class="bg-overlay"></div>
 
     <nav>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="EchoToDo Logo" style="width: 32px; height: 32px; border-radius: 6px;">
+                <img src="logo.png" alt="EchoToDo Logo" style="width:32px;height:32px;border-radius:6px;">
                 EchoToDo
             </a>
-            <a href="index.html" class="btn btn-primary">Back to Home</a>
+            <div style="display:flex;gap:12px;align-items:center;">
+                <a href="https://github.com/Sujoymoulick/EchoToDo" target="_blank" class="btn btn-ghost">GitHub</a>
+                <a href="index.html" class="btn btn-primary">← Back to Home</a>
+            </div>
         </div>
     </nav>
 
-    <main class="container">
-        <article class="content-card">
+    <main>
+        <section class="hero-section container">
+            <div class="zero-data-badge">
+                <span class="dot"></span>
+                Zero Data Collected
+            </div>
             <h1>Privacy Policy</h1>
-            <p>Last updated: May 26, 2026</p>
-            <p>
-                EchoToDo is built with a deep commitment to user privacy. We believe that your thoughts, notes, and productivity data belong to you and should remain completely private. This Privacy Policy details how the EchoToDo Chrome Extension handles data.
-            </p>
+            <p class="hero-subtitle">EchoToDo is built entirely on-device. Your tasks, voice notes, and browsing context never leave your computer.</p>
+            <p class="last-updated">Last updated: May 30, 2026 · Applies to EchoToDo v1.0.3+</p>
 
-            <h2>1. 100% Offline & Local Processing</h2>
-            <p>
-                Unlike traditional voice task applications, EchoToDo processes all speech and task generation entirely on your local machine. 
-            </p>
-            <ul>
-                <li><strong>No Cloud Storage:</strong> Your tasks, categories, and categories are saved directly in your browser's local sandbox storage (`chrome.storage.local`).</li>
-                <li><strong>No External NLP APIs:</strong> EchoToDo employs a robust, client-side, rule-based natural language processor (NLP) to extract metadata (like priorities and tags) from your voice transcripts. No text is sent to third-party AI models or servers.</li>
-                <li><strong>Zero Data Telemetry:</strong> We do not track your usage, clicks, domains visited, or count of tasks created.</li>
-            </ul>
+            <div class="guarantee-row">
+                <div class="guarantee-card">
+                    <div class="g-icon">🔒</div>
+                    <strong>No Servers</strong>
+                    <span>Zero backend infrastructure. No account, no cloud.</span>
+                </div>
+                <div class="guarantee-card">
+                    <div class="g-icon">🎙️</div>
+                    <strong>Local Voice Processing</strong>
+                    <span>Speech runs in your browser via the Web Speech API.</span>
+                </div>
+                <div class="guarantee-card">
+                    <div class="g-icon">📂</div>
+                    <strong>Local Storage Only</strong>
+                    <span>Tasks live in <code style="font-family:'JetBrains Mono',monospace;font-size:12px;">chrome.storage.local</code> on your device.</span>
+                </div>
+            </div>
+        </section>
 
-            <h2>2. Extension Permissions & Usage</h2>
-            <p>
-                To provide its core automated features, EchoToDo requests standard browser permissions. We only request the minimum permissions required for operation:
-            </p>
-            <ul>
-                <li><strong>`storage`:</strong> Required to securely save your structured tasks locally in the browser so they persist between sessions.</li>
-                <li><strong>`activeTab` & `tabs`:</strong> Used to detect the active website's domain name (e.g., `github.com` or `figma.com`) in order to automatically silo and display domain-specific checklists. The URL path, search queries, or tab content are never read or stored.</li>
-                <li><strong>`audio` (Microphone access):</strong> Required to capture your voice memos via the native HTML5 Web Speech API for real-time local transcription.</li>
-                <li><strong>`sidePanel`:</strong> Required to display your task checklist side-by-side with your active browser window for seamless productivity.</li>
-                <li><strong>`notifications`:</strong> Used to trigger light user notifications when tasks are successfully added or completed.</li>
-            </ul>
+        <section class="container">
+            <article class="content-card">
 
-            <h2>3. Web Speech API Integration</h2>
-            <p>
-                Voice transcription is handled through the browser's native `SpeechRecognition` engine. Transcripts are converted to text inside your local browser runtime. At no point are your voice audio files or spoken words captured, saved, or uploaded to our servers.
-            </p>
+                <span class="eyebrow">Full Disclosure</span>
 
-            <h2>4. Third-Party Services</h2>
-            <p>
-                EchoToDo operates without any backend infrastructure, third-party databases, tracking libraries, or external services. We do not share, sell, or distribute your local data to any third parties because we never have access to it in the first place.
-            </p>
+                <h2><span class="section-num">1</span> What Data We Collect</h2>
+                <p><strong>We collect absolutely no user data.</strong> EchoToDo has no backend, no analytics library, and no external servers. The extension cannot transmit data off your device because it has no mechanism to do so.</p>
+                <p>Specifically, we do <em>not</em> collect:</p>
+                <ul>
+                    <li>Voice recordings or audio files</li>
+                    <li>Task text, titles, or content</li>
+                    <li>Browsing history, URLs visited, or tab content</li>
+                    <li>Personal identifiers (name, email, IP address)</li>
+                    <li>Usage statistics, click events, or session data</li>
+                </ul>
 
-            <h2>5. Open Source Transparency</h2>
-            <p>
-                EchoToDo is open source and completely transparent. You can inspect our code, review the storage handlers, and verify our offline architecture directly in our public repository on GitHub.
-            </p>
+                <hr style="margin:32px 0;">
 
-            <h2>6. Changes to this Policy</h2>
-            <p>
-                We may update this Privacy Policy from time to time. Any updates will be reflected on this page. Because the extension has no network access capabilities, updates are distributed strictly through the official Chrome Web Store channel.
-            </p>
+                <h2><span class="section-num">2</span> How Your Data Is Stored</h2>
+                <p>All data created by EchoToDo is stored exclusively in your browser's local storage sandbox using the <code style="font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--surface-2);padding:2px 6px;border-radius:4px;">chrome.storage.local</code> API. This data:</p>
+                <ul>
+                    <li>Lives entirely on your device, inside your Chrome profile</li>
+                    <li>Is never synced to Google servers (we do not use <code style="font-family:'JetBrains Mono',monospace;font-size:12px;">chrome.storage.sync</code>)</li>
+                    <li>Is fully deleted when you uninstall the extension</li>
+                    <li>Can be exported at any time as a JSON file from within the extension</li>
+                </ul>
 
-            <h2>Contact Us</h2>
-            <p>
-                If you have any questions or feedback about our privacy practices, please open an issue on our GitHub repository.
-            </p>
-        </article>
+                <hr style="margin:32px 0;">
+
+                <h2><span class="section-num">3</span> Extension Permissions Explained</h2>
+                <p>EchoToDo requests the minimum permissions needed to function. Here is an exact explanation of how each permission is used:</p>
+
+                <table class="permission-table">
+                    <thead>
+                        <tr>
+                            <th>Permission</th>
+                            <th>Why it's needed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="perm-badge">storage</span></td>
+                            <td>Saves your task lists, Pomodoro timer state, and settings in local browser storage. No data is synced externally.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">tabs</span></td>
+                            <td>Reads the hostname of the active tab (e.g. <em>github.com</em>) to automatically group task lists by website. Only the domain name is read — never the full URL, page content, or query parameters.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">sidePanel</span></td>
+                            <td>Renders the EchoToDo task panel alongside any webpage so your list stays visible while you browse.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">notifications</span></td>
+                            <td>Sends a desktop notification when your Pomodoro focus or break timer session ends. Notifications are never sent at any other time.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">alarms</span></td>
+                            <td>Schedules a background alarm so the timer tracks time accurately even when the extension popup is closed.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">offscreen</span></td>
+                            <td>Creates a hidden document to play the timer completion MP3 sound. Audio cannot be played directly from the service worker — this is Chrome's required workaround.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">contextMenus</span></td>
+                            <td>Adds a right-click "Add Voice Task" menu item that opens the side panel for quick access from any webpage.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">microphone</span></td>
+                            <td>Required only when you tap the mic button to record a voice note. Access is requested at that moment — not on install. Voice transcription runs entirely through Chrome's built-in Web Speech API and is never sent to any server.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr style="margin:32px 0;">
+
+                <h2><span class="section-num">4</span> Microphone & Voice Processing</h2>
+                <p>Voice transcription is performed by the browser's native <strong>Web Speech API</strong> (<code style="font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--surface-2);padding:2px 6px;border-radius:4px;">SpeechRecognition</code>). EchoToDo does not record, buffer, upload, or store any audio. The mic button is entirely optional — you can add tasks manually via the ➕ button at any time without granting microphone access.</p>
+
+                <hr style="margin:32px 0;">
+
+                <h2><span class="section-num">5</span> Third-Party Services</h2>
+                <p>EchoToDo uses <strong>no third-party services</strong> of any kind — no analytics (Google Analytics, Mixpanel, etc.), no crash reporting, no A/B testing, no advertising SDKs, and no external APIs. The extension operates entirely within Chrome's sandboxed extension runtime.</p>
+
+                <hr style="margin:32px 0;">
+
+                <h2><span class="section-num">6</span> Open Source</h2>
+                <p>EchoToDo is open source. Every line of code is publicly auditable on GitHub. You can verify directly that no data collection code exists anywhere in the codebase.</p>
+                <p>
+                    <a href="https://github.com/Sujoymoulick/EchoToDo" target="_blank" style="color:var(--primary);font-weight:500;text-decoration:none;">→ View source on GitHub</a>
+                </p>
+
+                <hr style="margin:32px 0;">
+
+                <h2><span class="section-num">7</span> Changes to This Policy</h2>
+                <p>If this policy is ever updated, the new version will be published at this URL and the "Last updated" date at the top will be changed. Because EchoToDo has no network access capabilities, policy updates are distributed exclusively through the Chrome Web Store update channel.</p>
+
+                <hr style="margin:32px 0;">
+
+                <h2><span class="section-num">8</span> Contact</h2>
+                <p>Questions about this privacy policy? Open an issue on our GitHub repository — we respond to all questions there.</p>
+                <p>
+                    <a href="https://github.com/Sujoymoulick/EchoToDo/issues" target="_blank" style="color:var(--primary);font-weight:500;text-decoration:none;">→ Open an issue on GitHub</a>
+                </p>
+
+            </article>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/Sujoymoulick/EchoToDo.git" target="_blank">GitHub</a>
+                <a href="https://github.com/Sujoymoulick/EchoToDo" target="_blank">GitHub</a>
                 <a href="privacy.html">Privacy Policy</a>
+                <a href="index.html">Home</a>
             </div>
-            <p>© 2026 EchoToDo. Built with passion for privacy and speed.</p>
+            <p>© 2026 EchoToDo. Built with passion for privacy.</p>
         </div>
     </footer>
 
@@ -363,7 +635,6 @@
             const renderer = new Renderer({ alpha: true, antialias: true });
             const gl = renderer.gl;
             gl.clearColor(0, 0, 0, 0);
-
             let program;
 
             function resize() {
@@ -373,8 +644,7 @@
                 gl.canvas.style.height = '100%';
                 if (program) {
                     program.uniforms.uResolution.value = new Color(
-                        gl.canvas.width,
-                        gl.canvas.height,
+                        gl.canvas.width, gl.canvas.height,
                         gl.canvas.width / gl.canvas.height
                     );
                 }
@@ -389,9 +659,7 @@
                 uniforms: {
                     uTime: { value: 0 },
                     uColor: { value: new Color(...color) },
-                    uResolution: {
-                        value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height)
-                    },
+                    uResolution: { value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height) },
                     uMouse: { value: new Float32Array([mousePos.x, mousePos.y]) },
                     uAmplitude: { value: amplitude },
                     uSpeed: { value: speed }
@@ -399,27 +667,21 @@
             });
 
             const mesh = new Mesh(gl, { geometry, program });
-            let animateId;
 
             function update(t) {
-                animateId = requestAnimationFrame(update);
+                requestAnimationFrame(update);
                 program.uniforms.uTime.value = t * 0.001;
                 renderer.render({ scene: mesh });
             }
-            animateId = requestAnimationFrame(update);
+            requestAnimationFrame(update);
             ctn.appendChild(gl.canvas);
 
-            function handleMouseMove(e) {
-                const rect = ctn.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width;
-                const y = 1.0 - (e.clientY - rect.top) / rect.height;
-                mousePos.x = x;
-                mousePos.y = y;
-                program.uniforms.uMouse.value[0] = x;
-                program.uniforms.uMouse.value[1] = y;
-            }
             if (mouseReact) {
-                window.addEventListener('mousemove', handleMouseMove);
+                window.addEventListener('mousemove', (e) => {
+                    const rect = ctn.getBoundingClientRect();
+                    program.uniforms.uMouse.value[0] = (e.clientX - rect.left) / rect.width;
+                    program.uniforms.uMouse.value[1] = 1.0 - (e.clientY - rect.top) / rect.height;
+                });
             }
         }
     </script>
